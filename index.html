@@ -14,7 +14,15 @@ body{
 
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
-	to { background-position: 100% 100%; }
+	to { background-position: 0 100%; }
+}
+
+@keyframes pulse_animation {
+    0% { transform: translateY(-50%) rotate(0deg) scale(1); }
+    25% { transform: translateY(-50%) rotate(40deg) scale(1.4); }
+    50% { transform: translateY(-50%) rotate(0deg) scale(1); }
+	75% { transform: translateY(-50%) rotate(-40deg) scale(1.4); }
+    100% { transform: translateY(-50%) rotate(0deg) scale(1); }
 }
 
 .frame {  
@@ -27,11 +35,15 @@ img {
 	position: relative;
 	top: 50%;
 	bottom: 50%;
-	transform: translateY(-50%);
 	display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+	transform: translateY(-50%);
+	animation-name: pulse_animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .footer {
